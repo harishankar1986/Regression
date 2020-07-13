@@ -53,6 +53,7 @@ public class AdminProducts extends BaseClass {
 		login.loginApp(data[0],data[1]);
 		//Step 2: Navigate to SubCategory page
 		dashboard.navSubCategories();
+		SubCategory.subCategory();
 		//Step 3: Add Sub Category details
 		SubCategory.addSubCategory();
 		//Step 4: Verify the details entered
@@ -73,6 +74,7 @@ public class AdminProducts extends BaseClass {
 		login.loginApp(data[0],data[1]);
 		//Step 2: Navigate to SubCategory page
 		dashboard.navSubCategories();
+		SubCategory.subCategory();
 		//Step 3: Click Submit without adding credentials
 		SubCategory.subWithoutMandatory();
 		//Step 3: Add Sub Category details

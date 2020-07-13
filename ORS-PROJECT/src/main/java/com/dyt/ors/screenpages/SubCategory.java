@@ -44,9 +44,11 @@ public class SubCategory extends WebLibrary {
 	
 	@FindBy(xpath = "//input[@value='Submit']")
 	public static WebElement click_submit;
-
-	//=============================Add SubCategory==============================
-	public static void addSubCategory() {
+	//====================================================================
+	
+	
+	//============================SubCategory=============================
+	public static void subCategory() {
 		boolean bStatus;
 		
 		bStatus = clickElement(link_subCategory);
@@ -60,6 +62,19 @@ public class SubCategory extends WebLibrary {
 		
 		bStatus = clickElement(link_addSubCategory);
 		Reporter.log(bStatus, "Add SubCategory link clicked", "Add SubCategory link not clicked");
+	}
+	//==========================================================================
+	
+	
+	//=============================Add SubCategory==============================
+	public static void addSubCategory() {
+		boolean bStatus;
+
+		bStatus = verifyText(verify_header);
+		Reporter.log(bStatus, "Header verified", "Header not verified");
+		
+		bStatus = verifyText(verify_tableHeader);
+		Reporter.log(bStatus, "Table header verified", "Table header not verified");
 		
 		bStatus = selectListItem(txt_selectMainCategory,"Acetonicpoly");
 		Reporter.log(bStatus, "Selected main category from list", "Not selected main category from list");
@@ -73,12 +88,15 @@ public class SubCategory extends WebLibrary {
 		bStatus = fileUpload(link_image,"D:\\images\\glenmark.jpg");
 		Reporter.log(bStatus, "Image uploaded", "Image not uploaded");
 		
-		bStatus = selectListItem(link_document,"D:\\Documents\\EDLN.pdf");
+		bStatus = fileUpload(link_document,"D:\\Documents\\EDLN.pdf");
 		Reporter.log(bStatus, "Document uploaded", "Document not uploaded");
 		
 		bStatus = clickElement(click_submit);
 		Reporter.log(bStatus, "Submit button clicked", "Submit button not clicked");
 	}
+	//================================================================================
+	
+	
 	
 	//========================verify SubCategory Table================================
 	public static void verifySubTable() {
@@ -104,20 +122,15 @@ public class SubCategory extends WebLibrary {
 		  }
 			  
 		  }
+	//=====================================================================================
+	
 	
 	//===================Add SubCategory Without Mandatory Fields==========================
-	
 	public static void subWithoutMandatory() {
 		boolean bStatus;
-		
-		bStatus = clickElement(link_subCategory);
-		Reporter.log(bStatus, " SubCategory link clicked", "SubCategory link not clicked");
 	
 		bStatus = verifyText(verify_header);
 		Reporter.log(bStatus, "Header verified", "Header not verified");
-		
-		bStatus = clickElement(link_addSubCategory);
-		Reporter.log(bStatus, "Add SubCategory link clicked", "Add SubCategory link not clicked");
 		
 		wait(2);
 		
